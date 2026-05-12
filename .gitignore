@@ -51,3 +51,5 @@ API.txt
 # design handoff bundles + raw source uploads (heavy, keep local only)
 _reference/
 gymdome/
+
+.vercel

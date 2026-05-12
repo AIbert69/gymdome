@@ -11,13 +11,32 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Gym Dome",
   description: "Track smarter. Train harder. Be better.",
+  manifest: "/manifest.webmanifest",
+  applicationName: "Gym Dome",
+  appleWebApp: {
+    capable: true,
+    title: "Gym Dome",
+    statusBarStyle: "black-translucent",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  maximumScale: 1,
   viewportFit: "cover",
   themeColor: "#000000",
+  userScalable: false,
 };
 
 export default function RootLayout({
