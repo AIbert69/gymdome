@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# project-local credentials / scratch (NEVER COMMIT)
+API.txt
+*.keys
+*.secret
+
+# Dropbox/Win temp turds
+*.tmp.*
+
+# design handoff bundles + raw source uploads (heavy, keep local only)
+_reference/
+gymdome/
