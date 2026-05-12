@@ -35,7 +35,11 @@ export async function proxy(request: NextRequest) {
   const isAuthRoute =
     pathname.startsWith("/login") || pathname.startsWith("/auth");
   const isPublicAsset =
-    pathname.startsWith("/_next") || pathname === "/favicon.ico";
+    pathname.startsWith("/_next") ||
+    pathname === "/favicon.ico" ||
+    pathname === "/manifest.webmanifest" ||
+    pathname === "/robots.txt" ||
+    pathname === "/sitemap.xml";
 
   // Logged-out users can only see /login and /auth/*
   if (!user && !isAuthRoute && !isPublicAsset) {
@@ -63,6 +67,6 @@ export const config = {
      * - _next/static, _next/image
      * - favicon, image assets
      */
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|manifest.webmanifest|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|webmanifest)$).*)",
   ],
 };
